@@ -17,7 +17,8 @@
             if(rs && (rs != 'complete') && (rs != 'loaded')){
                 return;
             }
-            c(this);
+            chatButton = c(this);
+            chatButton.onclick = location.reload();
         };
         t.parentElement.insertBefore(s,t.nextSibling);
     })(document, 'https://datalab.ladesk.com/scripts/track.js', function(e){
