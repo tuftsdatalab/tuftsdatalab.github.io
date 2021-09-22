@@ -24,7 +24,10 @@ function getCookie(cname) {
 
 function initiateCalendars() {
     var calendar = getCookie('calendar');
-    if (calendar === 'boston') {
+    if (calendar === 'online') {
+        document.getElementById('online-tab').click();
+        setCookie('calendar', 'online', 365);
+    } else if (calendar === 'boston') {
         document.getElementById('boston-tab').click();
         setCookie('calendar', 'boston', 365);
     } else {
@@ -34,7 +37,7 @@ function initiateCalendars() {
 }
 
 function toggleTab(evt, ID) {
-  var i, tablinks;  
+  var i, tablinks;
   tabcontent = document.getElementsByClassName('tab-content');
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = 'none';
